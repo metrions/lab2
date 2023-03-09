@@ -29,17 +29,20 @@ number* push_n(number *c, int s){
     return a;
 }
 void zam_M(number *c){
+    number* s = c->next;
     if (c->el < c->next->el){
         c->el = c->next->el;
     }
     c->next = c->next->next;
-    
+    delete s;
 }
 void zam_m(number *c){
+    number *s = c->next;;
     if (c->el > c->next->el){
         c->el = c->next->el;
     }
     c->next = c->next->next;
+    delete s;
 }
 
 
@@ -58,8 +61,11 @@ int main(){
     text *n = NULL;
     number *f = NULL;
     char d;
-    while (!input.eof()){
+    while (1){
         input >> d;
+        if (input.eof()){
+            break;
+        }
         n = push(n, d);
     }
     cout << endl;
