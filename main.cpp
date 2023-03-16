@@ -1,9 +1,12 @@
-#include "stek.h"
+#include <iostream>
+#include "st2.h"
 
-int main(){
-    stack* t = create('1');
-    t = push('2', t);
-    char k;
-    k = *pop('1', t);
-
+int main()
+{
+    stack *s = NULL;
+    s = create('5');
+    s = push('a', s);
+    s = push('b', s);
+    s = push('c', s);
+    return 0;
 }
