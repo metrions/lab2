@@ -7,20 +7,22 @@ struct stack
     stack *next;
 };
 
-void vuvod(stack *t){
-    stack *k = t;
-    while (k != NULL){
-        std::cout << k->elem << std::endl;
-        k = k->next;
+char pop(stack *&t);
+
+int isnull(stack *t){
+    if (t != NULL){
+        return 1;
     }
+    else{
+        return 0;
+    }
+
 }
 
-stack *create(char elo){
-    stack *a = new stack;
-    a->elem = elo;
-    a->next = NULL;
-    vuvod(a);
-    return a;
+void vuvod(stack *t){
+    while (isnull(t)){
+        std::cout << pop(t) << std::endl;
+    }
 }
 
 stack *push(char c, stack *s)
@@ -34,11 +36,15 @@ stack *push(char c, stack *s)
 
 char pop(stack *&s)
 {
-    char c = s->elem;
-    stack *p = s;
-    s = s->next;
-    delete p;
-    vuvod(s);
-    return c;
+    if (isnull(s)){
+        char c = s->elem;
+        stack *p = s;
+        s = s->next;
+        delete p;
+        return c;}
+    else{
+        std::cout << "error";
+        return '-';
+    }
 }
 
