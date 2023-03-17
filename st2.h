@@ -30,7 +30,6 @@ stack *push(char c, stack *s)
     stack *p = new stack;
     p->elem = c;
     p->next = s;
-    vuvod(p);
     return p;
 }
 
