@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/zach.dir/zach.cpp.o -o zach 

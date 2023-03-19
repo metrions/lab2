@@ -5,6 +5,7 @@ struct stack
 {
     char elem;
     stack *next;
+
 };
 
 char pop(stack *&t);
@@ -19,11 +20,18 @@ int isnull(stack *t){
 
 }
 
-void vuvod(stack *t){
+
+stack *vuvod(stack *t){
     while (isnull(t)){
-        std::cout << pop(t) << std::endl;
+        std::cout << pop(t);
     }
+    return t;
 }
+
+stack *create(stack *t){
+    return NULL;
+}
+
 
 stack *push(char c, stack *s)
 {
