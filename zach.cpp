@@ -9,7 +9,7 @@ int max(char a, char b){
     }
     return int(b-'0');
 }
-
+// sss
 int min(char a, char b){
     if (int(a-'0') > int(b-'0')){
         return int(b-'0');
@@ -49,5 +49,6 @@ int main(){
         }
     }
     vuvod(tmp);
+    std::cout << "\n";
     vuvod(t);
 }
